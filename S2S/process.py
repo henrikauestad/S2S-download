@@ -55,6 +55,8 @@ class Hindcast:
                     (list of tuples of int; [(year,monty,day),(year,monty,day)])
                     Useful if the the observational period is shorter than the
                     hindcast period. Default is None.
+        cross_val   If True, uses cross validatio nin the computation of
+                    model climatology. Default is False.
     """
     def __init__(
                     self,
@@ -81,7 +83,7 @@ class Hindcast:
         self.process        = process
         self.path           = config['VALID_DB']
         self.period         = period
-        self.cross_val      = cross_val
+        self.cross_val      = cross_val #new attribute
 
         filename_absolute = self.filename_func('absolute')
 
@@ -184,8 +186,8 @@ class Hindcast:
 
             print('\tCompute model climatology')
             self.mean,self.std = xh.c_climatology(
-                                            self.data,
-                                            cross_validation = self.cross_val
+                                    self.data,
+                                    cross_validation = self.cross_val #new
                                                 )
 
             self.mean = self.mean.rename(self.var)

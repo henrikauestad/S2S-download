@@ -19,6 +19,8 @@ def print_progress(n,N,i='',e=''):
 
 def running_clim(x,index,window=30,cross_validation=False):
     """
+    NEW HERE, OPTIONAL CROSS VALIDATION
+
     Computes mean and standard deviation over x keeping dim -1. Dim -1 must be
     'dayofyear', with the corresponding days given in index.
 
