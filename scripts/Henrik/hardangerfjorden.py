@@ -56,10 +56,10 @@ mae_fc, mae_clim, mae_pers = [], [], []
 bw = BarentsWatch().load('all',no=0).sortby('time')[var]
 bw = lc.cluster(bw,'Hisdalen',3,1)
 
-t_start  = (2020,2,1) #can start with 8
+t_start  = (2020,8,1) #can start with 8
 t_end    = (2021,8,1)
 model    = ''
-extent   = [4.5,7.5,59.3,61]
+extent   = [4.5,7.1,59.3,61]
 
 hh = Hindcast(
                         var,
